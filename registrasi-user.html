@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registrasi User</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style-register.css">
+
+    <!-- Font Awesome -->
+    <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- CARD -->
+        <div class="register-card">
+
+            <!-- LOGO -->
+            <div class="logo-section">
+                <img 
+                    src="logo-klinik.png" 
+                    alt="Logo Klinik"
+                    class="logo"
+                >
+
+                <h1>Vet Clinic</h1>
+
+                <p>
+                    Silakan isi form registrasi untuk membuat akun
+                </p>
+            </div>
+
+            <!-- FORM -->
+            <form id="registerForm" class="register-form">
+
+                <!-- NAMA -->
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <p class="input-label">Nama Lengkap</p>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Masukkan nama lengkap"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+                <!-- EMAIL -->
+                <div class="input-group">
+
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <p class="input-label">Email</p>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@gmail.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+                <!-- PHONE -->
+                <div class="input-group">
+
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <p class="input-label">Nomor Telepon</p>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="081234567890"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="input-group">
+
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <p class="input-label">Password</p>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="minimal 8 karakter"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <i 
+                        class="fa-solid fa-eye eye-icon toggle-password"
+                        data-target="password"
+                    ></i>
+
+                </div>
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="input-group">
+
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <p class="input-label">Konfirmasi Password</p>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Konfirmasi password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <i 
+                        class="fa-solid fa-eye eye-icon toggle-password"
+                        data-target="confirmPassword"
+                    ></i>
+
+                </div>
+
+                <!-- BUTTON REGISTER -->
+                <button type="submit" class="register-btn">
+
+                    <img
+                        src="regis.png"
+                        alt="Register"
+                        class="button-icon"
+                    >
+
+                    <span>Daftar Sekarang</span>
+
+                </button>
+
+                <!-- DIVIDER -->
+                <div class="divider">
+                    <span>Atau daftar dengan</span>
+                </div>
+
+                <!-- GOOGLE BUTTON -->
+                <button type="button" class="google-btn">
+
+                    <img
+                        src="google.jpg"
+                        alt="Google"
+                        class="google-icon"
+                    >
+
+                    <span>Daftar dengan Google</span>
+
+                </button>
+
+                <!-- LOGIN -->
+                <p class="login-text">
+
+                    Sudah punya akun?
+
+                    <a href="login-user.html">
+                        Masuk sekarang
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="registrasi-user.js"></script>
+
+</body>
+</html>

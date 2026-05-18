@@ -1,0 +1,253 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f7fb;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    width: 280px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-right: 1px solid #e2e8f0;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebar-logo {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+}
+
+.logo-text h2 {
+    font-size: 22px;
+    color: #1e293b;
+}
+
+.logo-text p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* =========================
+   MENU CARD
+========================= */
+
+.menu-card {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    color: #334155;
+
+    background: #f8fafc;
+
+    transition: 0.3s;
+}
+
+.menu-card i {
+    font-size: 18px;
+}
+
+.menu-card:hover {
+
+    background: #4f46e5;
+
+    color: white;
+
+    transform: translateX(5px);
+}
+
+.menu-card.active {
+
+    background: #4f46e5;
+
+    color: white;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+
+    flex: 1;
+
+    padding: 35px;
+
+    animation: fadeIn 0.5s ease;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+
+    font-size: 32px;
+
+    color: #1e293b;
+
+    margin-bottom: 10px;
+}
+
+.topbar p {
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.dashboard-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px;
+}
+
+/* =========================
+   INFO CARD
+========================= */
+
+.info-card {
+
+    background: rgb(255, 255, 255);
+
+    padding: 25px;
+    width: 100%;
+    max-width: 500px;
+    margin:0 auto;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.05);
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+
+    transform: translateY(-5px);
+}
+
+.card-icon {
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 18px;
+
+    background: #eef2ff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.card-icon i {
+
+    font-size: 24px;
+
+    color: #4f46e5;
+}
+
+.info-card h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+    color: #1e293b;
+}
+
+.info-card p {
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

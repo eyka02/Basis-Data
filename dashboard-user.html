@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard User</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="style-dashboard.css"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <!-- LOGO -->
+            <div class="sidebar-logo">
+
+                <img
+                    src="logo-klinik.png"
+                    alt="Logo Klinik"
+                    class="logo"
+                >
+
+                <div class="logo-text">
+
+                    <h2>Vet Clinic</h2>
+
+                    <p>
+                        Klinik Hewan
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- MENU -->
+            <div class="menu-container">
+
+                <a href="dashboard-user.html" class="menu-card active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="pet-list.html" class="menu-card">
+
+                    <i class="fa-solid fa-paw"></i>
+
+                    <span>Hewan Saya</span>
+
+                </a>
+
+                <a href="appointment.html" class="menu-card">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Appointment</span>
+
+                </a>
+
+                <a href="visit-history.html" class="menu-card">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    <span>Riwayat Kunjungan</span>
+
+                </a>
+
+                <a href="jadwal-vaksin.html" class="menu-card">
+
+                    <i class="fa-solid fa-syringe"></i>
+
+                    <span>Jadwal Vaksin</span>
+
+                </a>
+
+                <a href="payment.html" class="menu-card">
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    <span>Pembayaran</span>
+
+                </a>
+
+                <a href="notifications.html" class="menu-card">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span>Notifikasi</span>
+
+                </a>
+
+                <a href="profile.html" class="menu-card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profil Saya</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+
+                <div>
+
+                    <h1>
+                        Selamat malam,
+                        <span id="username">
+
+                        </span>
+                        👋
+                    </h1>
+
+                    <p>
+                        Berikut ringkasan kesehatan
+                        hewan kesayangan Anda hari ini.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- DASHBOARD CARDS -->
+            <div class="dashboard-cards">
+
+                <!-- CARD -->
+                <div class="info-card">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-paw "></i>
+                    </div>
+
+                    <h3>3</h3>
+
+                    <p>Total Hewan</p>
+
+                </div>
+
+                   <!-- CARD -->
+                <div class="info-card">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <h3>12</h3>
+
+                    <p>Appointment</p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="info-card">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-syringe"></i>
+                    </div>
+
+                    <h3>2</h3>
+
+                    <p>Jadwal Vaksin</p>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="info-card">
+
+                    <div class="card-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+
+                    <h3>4</h3>
+
+                    <p>Kunjungan Bulan Ini</p>
+
+                </div>
+
+                <div class="two-cards">
+                    
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

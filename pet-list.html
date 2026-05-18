@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daftar Hewan</title>
+
+    <link rel="stylesheet" href="style-pet-list.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <!-- LOGO -->
+            <div class="sidebar-logo">
+
+                <img
+                    src="logo-klinik.png"
+                    alt="Logo Klinik"
+                    class="logo"
+                >
+
+                <div class="logo-text">
+
+                    <h2>Vet Clinic</h2>
+
+                    <p>
+                        Klinik Hewan
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- MENU -->
+            <div class="menu-container">
+
+                <a href="dashboard-user.html" class="menu-card">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="pet-list.html" class="menu-card active">
+
+                    <i class="fa-solid fa-paw"></i>
+
+                    <span>Hewan Saya</span>
+
+                </a>
+
+                <a href="appointment.html" class="menu-card">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Appointment</span>
+
+                </a>
+
+                <a href="visit-history.html" class="menu-card">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    <span>Riwayat Kunjungan</span>
+
+                </a>
+
+                <a href="jadwal-vaksin.html" class="menu-card">
+
+                    <i class="fa-solid fa-syringe"></i>
+
+                    <span>Jadwal Vaksin</span>
+
+                </a>
+
+                <a href="payment.html" class="menu-card">
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    <span>Pembayaran</span>
+
+                </a>
+
+                <a href="notifications.html" class="menu-card">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span>Notifikasi</span>
+
+                </a>
+
+                <a href="profile.html" class="menu-card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profil Saya</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+<!-- MAIN -->
+<main class="main-content">
+
+    <!-- MODAL ADD PET -->
+    <div class="modal" id="petModal">
+
+        <div class="modal-content">
+
+            <h2>Tambah Hewan</h2>
+
+            <form id="petForm">
+
+                <input type="file" accept="image/*" required>
+
+                <input type="text" placeholder="Nama Hewan" required>
+
+                <input type="text" placeholder="Jenis Hewan" required>
+
+                <input type="text" placeholder="Ras" required>
+
+                <input type="date" required>
+
+                <input type="number" placeholder="Berat (kg)" required>
+
+                <input type="text" placeholder="Warna" required>
+
+                <select required>
+                    <option value="">Jenis Kelamin</option>
+                    <option>Jantan</option>
+                    <option>Betina</option>
+                </select>
+
+                <textarea placeholder="Riwayat alergi (opsional)"></textarea>
+
+                <div class="modal-actions">
+
+                    <button type="button" id="closeModal">
+                        Batal
+                    </button>
+
+                    <button type="submit">
+                        Simpan
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <div>
+            <h1>Hewan Saya</h1>
+            <p>Kelola data hewan peliharaan</p>
+        </div>
+
+        <button class="add-btn" id="openModal">
+            <i class="fa-solid fa-plus"></i>
+            Tambah Hewan
+        </button>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>3</h3>
+            <p>Total Hewan</p>
+        </div>
+
+        <div class="stat-card green">
+            <h3>2</h3>
+            <p>Vaksin Lengkap</p>
+        </div>
+
+        <div class="stat-card orange">
+            <h3>1</h3>
+            <p>Vaksin Pending</p>
+        </div>
+
+    </div>
+
+    <!-- PET GRID -->
+    <div class="pet-grid">
+
+        <!-- PET CARD -->
+        <div class="pet-card">
+
+            <div class="pet-image-wrap">
+
+                <img src="pet1.jpg">
+
+                <span class="badge success">
+                    Vaksin Lengkap
+                </span>
+
+            </div>
+
+            <div class="pet-info">
+
+                <h3>Bella</h3>
+
+                <p>Jenis: Anjing</p>
+                <p>Ras: Golden Retriever</p>
+                <p>Umur: 3 tahun</p>
+                <p>Berat: 12 kg</p>
+                <p>Kelamin: Betina</p>
+                <p>Alergi: Tidak ada</p>
+
+            </div>
+
+            <div class="pet-actions">
+
+                <button class="detail-btn">
+                    Lihat Detail
+                </button>
+
+                <button class="edit-btn">
+                    Edit
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PET CARD -->
+        <div class="pet-card">
+
+            <div class="pet-image-wrap">
+
+                <img src="pet1.jpg">
+
+                <span class="badge warning">
+                    Vaksin Pending
+                </span>
+
+            </div>
+
+            <div class="pet-info">
+
+                <h3>Max</h3>
+
+                <p>Jenis: Kucing</p>
+                <p>Ras: Persia</p>
+                <p>Umur: 2 tahun</p>
+                <p>Berat: 4 kg</p>
+                <p>Kelamin: Jantan</p>
+                <p>Alergi: Seafood</p>
+
+            </div>
+
+            <div class="pet-actions">
+
+                <button class="detail-btn">
+                    Lihat Detail
+                </button>
+
+                <button class="edit-btn">
+                    Edit
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ADD CARD -->
+        <div class="pet-card add-card" id="openModal">
+
+            <i class="fa-solid fa-plus"></i>
+
+            <p>Tambah Hewan Baru</p>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+<script src="pet.js"></script>
+</body>
+</html>

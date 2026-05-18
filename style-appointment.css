@@ -1,0 +1,458 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f7fb;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.dashboard-layout {
+
+    display: flex;
+
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    width: 280px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-right: 1px solid #e2e8f0;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebar-logo {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.logo {
+
+    width: 65px;
+    height: 65px;
+}
+
+.logo-text h2 {
+
+    font-size: 22px;
+
+    color: #1e293b;
+}
+
+.logo-text p {
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* =========================
+   MENU CARD
+========================= */
+
+.menu-card {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    color: #334155;
+
+    background: #f8fafc;
+
+    transition: 0.3s ease;
+}
+
+.menu-card i {
+
+    font-size: 18px;
+}
+
+.menu-card:hover {
+
+    background: #4f46e5;
+
+    color: white;
+
+    transform: translateX(5px);
+}
+
+.menu-card.active {
+
+    background: #4f46e5;
+
+    color: white;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+
+    flex: 1;
+
+    padding: 35px;
+
+    animation: fadeIn 0.5s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+
+    font-size: 32px;
+
+    color: #1e293b;
+
+    margin-bottom: 10px;
+}
+
+.page-header p {
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+/* =========================
+   NAVIGATION BUTTON
+========================= */
+
+.appointment-navigation {
+
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.nav-btn {
+
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 14px;
+
+    background: white;
+
+    color: #334155;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.05);
+}
+
+.nav-btn:hover {
+
+    background: #4f46e5;
+
+    color: white;
+}
+
+.nav-btn.active {
+
+    background: #4f46e5;
+
+    color: white;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.appointment-form-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.05);
+
+    margin-bottom: 30px;
+}
+
+.appointment-form-card h2 {
+
+    margin-bottom: 25px;
+
+    color: #1e293b;
+}
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.form-group label {
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 4px rgba(79,70,229,0.12);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.submit-btn {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+
+    background: #4338ca;
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MY APPOINTMENT
+========================= */
+
+.my-appointment-card {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+/* =========================
+   APPOINTMENT ITEM
+========================= */
+
+.appointment-item {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.05);
+
+    transition: 0.3s ease;
+}
+
+.appointment-item:hover {
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.appointment-info h3 {
+
+    margin-bottom: 8px;
+
+    color: #1e293b;
+}
+
+.appointment-info p {
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+/* =========================
+   ACTION BUTTON
+========================= */
+
+.appointment-action {
+
+    display: flex;
+    gap: 10px;
+}
+
+.reschedule-btn,
+.cancel-btn {
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+/* RESCHEDULE */
+
+.reschedule-btn {
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+}
+
+.reschedule-btn:hover {
+
+    background: #4f46e5;
+
+    color: white;
+}
+
+/* CANCEL */
+
+.cancel-btn {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+.cancel-btn:hover {
+
+    background: #dc2626;
+
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
