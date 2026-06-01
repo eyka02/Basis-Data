@@ -1,4 +1,3 @@
-```markdown name=README.md
 # Backend - Sistem Manajemen Klinik Medis Hewan
 
 Express.js backend untuk Sistem Manajemen Klinik Medis Hewan dengan fitur master data, riwayat kunjungan, manajemen stok otomatis, dan laporan.
@@ -217,4 +216,3 @@ Ini akan menggunakan `nodemon` untuk auto-reload ketika ada perubahan file.
 ## License
 
 ISC
-```
