@@ -1,0 +1,11 @@
+.owner-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+}
+
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}

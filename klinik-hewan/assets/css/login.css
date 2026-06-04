@@ -1,0 +1,97 @@
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    height:100vh;
+
+    /* INI PENTING: center login */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CARD LOGIN */
+.login-card{
+    width:380px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
+.login-header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.login-header h1{
+    margin:0;
+    font-size:22px;
+}
+
+.login-header p{
+    margin-top:5px;
+    color:#64748b;
+    font-size:13px;
+}
+
+/* FORM WAJIB COLUMN */
+.login-form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* LABEL */
+.login-form label{
+    font-size:13px;
+    color:#334155;
+}
+
+/* INPUT FIX */
+.login-form input{
+    padding:10px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    outline:none;
+    font-size:14px;
+}
+
+.login-form input:focus{
+    border-color:#2563eb;
+}
+
+/* BUTTON */
+.login-form button{
+    margin-top:10px;
+    padding:10px;
+    background:#22c55e;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.login-form button:hover{
+    background:#16a34a;
+}
+
+/* FOOTER */
+.login-footer{
+    margin-top:15px;
+    text-align:center;
+    font-size:11px;
+    color:#64748b;
+}
+
+/* ERROR */
+.alert-error{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:10px;
+    border-radius:8px;
+    font-size:13px;
+    margin-bottom:10px;
+}

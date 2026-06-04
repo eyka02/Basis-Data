@@ -1,0 +1,18 @@
+.pet-photo{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.detail-hewan{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+}
+
+.pet-profile{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
