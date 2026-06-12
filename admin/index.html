@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Klinik Hewan</title>
+    <link rel="stylesheet" href="style-admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="sidebar">
+        <div class="brand">Admin Klinik</div>
+        <nav>
+          <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+          <button class="nav-btn" data-section="pemilik">Pemilik</button>
+          <button class="nav-btn" data-section="hewan">Hewan</button>
+          <button class="nav-btn" data-section="kunjungan">Kunjungan</button>
+          <button class="nav-btn" data-section="obat-vaksin">Obat/Vaksin</button>
+          <button class="nav-btn" data-section="appointment">Appointment</button>
+          <button class="nav-btn" data-section="pembayaran">Pembayaran</button>
+          <button class="nav-btn" data-section="laporan">Laporan</button>
+        </nav>
+        <button id="logoutBtn" class="btn btn-logout">Logout</button>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Panel Admin Klinik Hewan</h1>
+            <p id="welcomeText"></p>
+          </div>
+        </header>
+
+        <section id="dashboard" class="page-section visible">
+          <div class="section-header"><h2>Dashboard</h2></div>
+          <div class="card-grid" id="dashboardSummary"></div>
+          <div class="report-card" id="reportSummary"></div>
+        </section>
+
+        <section id="pemilik" class="page-section">
+          <div class="section-header"><h2>Data Pemilik</h2></div>
+          <div class="form-grid">
+            <form id="ownerForm" class="card form-card">
+              <h3>Tambah Pemilik</h3>
+              <label>Nama Pemilik</label>
+              <input type="text" id="ownerName" required />
+              <label>Telepon</label>
+              <input type="text" id="ownerPhone" />
+              <label>Email</label>
+              <input type="email" id="ownerEmail" />
+              <label>Alamat</label>
+              <textarea id="ownerAddress"></textarea>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+            <div class="card table-card">
+              <h3>Daftar Pemilik</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Telepon</th>
+                    <th>Email</th>
+                    <th>Alamat</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="ownersTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="hewan" class="page-section">
+          <div class="section-header"><h2>Data Hewan</h2></div>
+          <div class="form-grid">
+            <form id="animalForm" class="card form-card">
+              <h3>Tambah Hewan</h3>
+              <label>Pemilik</label>
+              <select id="animalOwner"></select>
+              <label>Nama Hewan</label>
+              <input type="text" id="animalName" required />
+              <label>Jenis Hewan</label>
+              <input type="text" id="animalType" required />
+              <label>Ras</label>
+              <input type="text" id="animalBreed" />
+              <label>Tanggal Lahir</label>
+              <input type="date" id="animalDob" />
+              <label>Berat (kg)</label>
+              <input type="number" step="0.1" id="animalWeight" />
+              <label>Warna</label>
+              <input type="text" id="animalColor" />
+              <label>Jenis Kelamin</label>
+              <select id="animalGender">
+                <option value="">Pilih</option>
+                <option value="Jantan">Jantan</option>
+                <option value="Betina">Betina</option>
+              </select>
+              <label>Alergi / Catatan</label>
+              <textarea id="animalAllergy"></textarea>
+              <label>Status Vaksin</label>
+              <select id="animalVaccineStatus">
+                <option value="">Pilih</option>
+                <option value="Up-to-date">Up-to-date</option>
+                <option value="Belum">Belum</option>
+              </select>
+              <label>Foto (URL)</label>
+              <input type="text" id="animalPhoto" />
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+            <div class="card table-card">
+              <h3>Daftar Hewan</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    <th>Ras</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Pemilik</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="animalsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="kunjungan" class="page-section">
+          <div class="section-header"><h2>Riwayat Kunjungan</h2></div>
+          <div class="form-grid">
+            <form id="visitForm" class="card form-card">
+              <h3>Tambah Kunjungan</h3>
+              <label>Hewan</label>
+              <select id="visitAnimal"></select>
+              <label>Tanggal</label>
+              <input type="date" id="visitDate" required />
+              <label>Keluhan</label>
+              <textarea id="visitComplaint"></textarea>
+              <label>Diagnosa</label>
+              <textarea id="visitDiagnosis"></textarea>
+              <label>Tindakan Medis</label>
+              <textarea id="visitTreatment"></textarea>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+            <div class="card table-card">
+              <h3>Daftar Kunjungan</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Tanggal</th>
+                    <th>Hewan</th>
+                    <th>Pemilik</th>
+                    <th>Diagnosa</th>
+                    <th>Tindakan</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="visitsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="obat-vaksin" class="page-section">
+          <div class="section-header"><h2>Obat &amp; Vaksin</h2></div>
+          <div class="form-grid">
+            <form id="itemForm" class="card form-card">
+              <h3>Tambah Item</h3>
+              <label>Nama Item</label>
+              <input type="text" id="itemName" required />
+              <label>Jenis</label>
+              <select id="itemType" required>
+                <option value="Obat">Obat</option>
+                <option value="Vaksin">Vaksin</option>
+              </select>
+              <label>Stok</label>
+              <input type="number" id="itemStock" required />
+              <label>Harga</label>
+              <input type="number" id="itemPrice" required />
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+            <div class="card table-card">
+              <h3>Daftar Item</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    <th>Stok</th>
+                    <th>Harga</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="itemsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="appointment" class="page-section">
+          <div class="section-header"><h2>Appointment</h2></div>
+          <div class="form-grid">
+            <form id="appointmentForm" class="card form-card">
+              <h3>Tambah Appointment</h3>
+              <label>Hewan</label>
+              <select id="appointmentAnimal"></select>
+              <label>Tanggal</label>
+              <input type="date" id="appointmentDate" required />
+              <label>Jam</label>
+              <input type="time" id="appointmentTime" required />
+              <label>Keluhan</label>
+              <textarea id="appointmentComplaint"></textarea>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+            <div class="card table-card">
+              <h3>Daftar Appointment</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Tanggal</th>
+                    <th>Jam</th>
+                    <th>Hewan</th>
+                    <th>Pemilik</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="appointmentsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="pembayaran" class="page-section">
+          <div class="section-header"><h2>Pembayaran</h2></div>
+          <div class="form-grid">
+            <form id="paymentForm" class="card form-card">
+              <h3>Tambah Pembayaran</h3>
+              <label>Kunjungan</label>
+              <select id="paymentVisit"></select>
+              <label>Metode</label>
+              <select id="paymentMethod" required>
+                <option value="Cash">Cash</option>
+                <option value="Transfer">Transfer</option>
+                <option value="QRIS">QRIS</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+            <div class="card table-card">
+              <h3>Daftar Pembayaran</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Invoice</th>
+                    <th>Pemilik</th>
+                    <th>Hewan</th>
+                    <th>Total</th>
+                    <th>Metode</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="paymentsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="laporan" class="page-section">
+          <div class="section-header"><h2>Laporan</h2></div>
+          <div class="card report-card">
+            <h3>Ringkasan Klinik</h3>
+            <div id="clinicSummary"></div>
+          </div>
+          <div class="card report-card">
+            <h3>Item Paling Sering Digunakan</h3>
+            <div id="mostUsedItems"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="owners.js"></script>
+    <script src="animals.js"></script>
+    <script src="visits.js"></script>
+    <script src="items.js"></script>
+    <script src="appointments.js"></script>
+    <script src="payments.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="init.js"></script>
+  </body>
+</html>

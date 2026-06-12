@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Klinik Hewan - Login</title>
+    <link rel="stylesheet" href="style-admin.css" />
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-card">
+        <h1>Admin Klinik Hewan</h1>
+        <form id="loginForm" class="login-form">
+          <label for="username">Username</label>
+          <input type="text" id="username" autocomplete="username" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" autocomplete="current-password" required />
+
+          <button type="submit" class="btn btn-primary">Login</button>
+          <p id="loginError" class="form-error"></p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const API_BASE = "http://localhost:5000/api";
+
+      document.getElementById("loginForm").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const errorEl = document.getElementById("loginError");
+        errorEl.textContent = "";
+
+        try {
+          const response = await fetch(`${API_BASE}/auth/login`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+          });
+
+          const data = await response.json();
+
+          if (!response.ok || !data.success) {
+            errorEl.textContent = data.message || "Login gagal, periksa kembali kredensial Anda.";
+            return;
+          }
+
+          localStorage.setItem("adminToken", data.data.token);
+          localStorage.setItem("adminUsername", data.data.username);
+          window.location.href = "index.html";
+        } catch (error) {
+          errorEl.textContent = "Tidak dapat terhubung ke server. Coba lagi nanti.";
+        }
+      });
+    </script>
+  </body>
+</html>
